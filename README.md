@@ -69,14 +69,14 @@ ORDER BY salary DESC
 LIMIT 20
 ```
 Joined two subquery tables together to get salaries of the top 3 paid players over time.
-
+```SQL
 SELECT l.*, r.salary FROM
     (SELECT playerID, HR, yearID FROM Batting
     WHERE playerID IN ('bondsba01' ,'rodrial01', 'pujolal01')) as l
 LEFT JOIN
     (SELECT * FROM Salaries) as r
 ON l.playerID = r.playerID AND l.yearID = r.yearID
-
+```
 
 ------------------------------
 
