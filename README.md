@@ -22,7 +22,7 @@ The overall goal was to practice my SQL queries while answering some interesting
 Some Queries used:
 
 Top 5 teams by Payroll. Had to sum(salary) and group by teamID, and yearID:
-
+```SQL
 WITH payrolls AS
 (SELECT SUM(salary) AS Payroll, teamID, yearID 
 FROM Salaries
@@ -33,7 +33,7 @@ LIMIT 20)
 
 SELECT DISTINCT(teamID) FROM payrolls
 LIMIT 5
-
+```
 ---------
 
 Used case to set the other teams besides the top 5 as others
