@@ -34,10 +34,10 @@ LIMIT 20)
 SELECT DISTINCT(teamID) FROM payrolls
 LIMIT 5
 ```
----------
 
 Used case to set the other teams besides the top 5 as others
 
+```SQL
 WITH payrolls AS
 (SELECT SUM(salary) AS Payroll, teamID, yearID 
 FROM Salaries
@@ -51,9 +51,10 @@ SELECT Payroll,yearID, AVG(Payroll),
     END team
 FROM payrolls
 GROUP BY Team, yearID
+```
 
 To get avg salary by year to see trend over time.
-
+```SQL
 SELECT yearID, AVG(salary) AS Payroll
 FROM Salaries
 WHERE yearID BETWEEN 2006 AND 2016
@@ -66,7 +67,7 @@ LEFT JOIN People r
 ON l.playerID = r.playerID
 ORDER BY salary DESC
 LIMIT 20
-
+```
 Joined two subquery tables together to get salaries of the top 3 paid players over time.
 
 SELECT l.*, r.salary FROM
